@@ -37,6 +37,7 @@ def test_climate_api(
     json_response: dict = response.json()
     assert json_response != "Invalid request parameters"
     assert len(json_response) > 0
+    item: dict
     for item in json_response:
         assert item["gcm"] == gcm
         assert item["variable"] == var
