@@ -1,0 +1,28 @@
+default_language_version:
+  python: python3
+repos:
+  - repo: https://github.com/psf/black
+    rev: stable
+    hooks:
+      - id: black
+        language_version: python3
+  - repo: https://github.com/timothycrosley/isort
+    rev: 5.4.2
+    hooks:
+      - id: isort
+        language_version: python3
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.8.3
+    hooks:
+      - id: flake8
+        language_version: python3
+  - repo: https://github.com/PyCQA/pylint
+    rev: origin/2.6
+    hooks:
+      - id: pylint
+        language_version: python3
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: d6e31aeb109d8ff85282c3fd632c89f8ea7b0dee
+    hooks:
+      - id: mypy
+        language_version: python3
