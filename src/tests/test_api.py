@@ -22,6 +22,13 @@ def test_climate_api(
 ) -> None:
     """Failure of this test implies that API does not
     return correct response for valid parameter permutations
+    :rtype: None
+    :param data_type: Types such as monthly average (mavg) etc
+    :param gcm: Global circulation models
+    :param var: Temperature (tas) or precipitation (pr)
+    :param start: Start year
+    :param end: End year
+    :param country: ISO country code
     """
     path: str = f"{data_type}/{gcm}/{var}/{start}/{end}/{country}"
     url: str = f"{BASE_URL}/{path}"
