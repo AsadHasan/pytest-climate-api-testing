@@ -9,7 +9,7 @@ from config import BASE_URL
 
 
 @pytest.mark.parametrize(
-    "type,gcm,var,start,end,country",
+    "data_type,gcm,var,start,end,country",
     [
         ("mavg", "bccr_bcm2_0", "pr", 2020, 2039, "gbr"),
         ("annualavg", "cccma_cgcm3_1", "tas", 1980, 1999, "pak"),
@@ -18,12 +18,12 @@ from config import BASE_URL
     ],
 )
 def test_climate_api(
-    type: str, gcm: str, var: str, start: int, end: int, country: str
+    data_type: str, gcm: str, var: str, start: int, end: int, country: str
 ) -> None:
     """Failure of this test implies that API does not
     return correct response for valid parameter permutations
     """
-    path: str = f"{type}/{gcm}/{var}/{start}/{end}/{country}"
+    path: str = f"{data_type}/{gcm}/{var}/{start}/{end}/{country}"
     url: str = f"{BASE_URL}/{path}"
     response: Response = requests.get(url)
     response.raise_for_status()
